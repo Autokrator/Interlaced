@@ -1,21 +1,26 @@
 package com.untitled.screens.game.gameplay;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class GameRenderer {
 
-    private GameWorld world;
+    private GameWorld world; // Game world position information
     private OrthographicCamera camera;
     private ShapeRenderer rend;
 
     public GameRenderer(GameWorld w){
+
+        // World
         world = w;
+
+        // Camera
         camera = new OrthographicCamera();
         camera.setToOrtho(true, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+        // Renderers
         rend = new ShapeRenderer();
         rend.setProjectionMatrix(camera.combined);
     }
